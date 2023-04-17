@@ -1,0 +1,37 @@
+Practical 5
+
+Aim :- Write simple JavaScript functions in Node-Red simple HTTP server page
+using node red Follow the steps
+
+First drag drop the required controls as shown
+Set the controls as per requirements and run in chromium browser.
+Step 1:- go to start button of raspberry Pi, click on Node-RED tab in programming.
+Step 2:- once it is been clicked, a command prompt will get open, which will
+display, IP address of your raspberry pi device with a port number 1880, on which
+the NODE-RED runs.
+Step 3:- copy the IP address with port number for example:- 127.0.0.1:1880.
+Step 4:- paste this copied data on the chromium browser. It will display Node-Red
+on browser.
+Step 5:- drag and drop the required components as shown in diagram in the flow
+area.
+Step 6:- once the components are available in flow area, start setting its
+properties one by one.
+Step 7:- once all properties and java script are written, deploy the flow.
+Step 8:- after getting successfully deploy message, it’s time to open the URL.
+Step 9:- open a new tab in the chromium browser, enter the following URL
+127.0.0.1:1880/querypitemp and press enter.
+The output will be displayed on the browser window as follows
+The current temp is = 40.6‘C
+
+(QuErY PI temp)globe GET
+
+(Temp CMD) EXEC
+
+(Ptempc)FUNCTION- 
+str = msg.payload;
+str=str.substrongs[5,11];
+msg.payload='<h1> The current temp is'+str+'</h1>';
+return msg;
+
+(Current Pi Temperature) HHTP response
+
