@@ -1,0 +1,70 @@
+pract2 - 
+Q)What’s Node-RED?
+Node-RED is a powerful open source tool for building Internet of Things (IoT) applications with
+the goal of simplifying the programming component.
+Practical of Architecting Of IoT
+Asst. Prof. Rashmi Pote G. N. Khalsa College
+It uses a visual programming that allows you to connect code blocks, known as nodes, together
+to perform a task.
+The nodes when wired together are called flows.
+Q)Why do I think Node-RED is a great solution?
+Node-RED is open source and developed by IBM.
+The Raspberry Pi runs Node-RED perfectly.
+With Node-RED you can spend more time making cool stuff, rather than spending countless
+hours writing code.
+Don’t get me wrong. I love programming and there is code that needs to be written throughout
+this course, but Node-RED allows you to prototype a complex home automation system quickly.
+What can you do with Node-RED?
+Node-RED makes it easy to:
+ Access your RPi GPIOs
+ Establish an MQTT connection with other boards (Arduino, ESP8266, etc)
+ Create a responsive graphical user interface for your projects
+ Communicate with third-party services (IFTTT.com, Adafruit.io, Thing Speak, etc)
+ Retrieve data from the web (weather forecast, stock prices, emails. etc)
+ Create time triggered events
+ Store and retrieve data from a database
+Here’s a library with some examples of flows and nodes for Node-RED.
+Q) Installing Node-RED
+Note: Node red usually comes preinstalled with Raspbian!!
+Getting Node-RED installed in your Raspberry Pi is quick and easy. It just takes a few
+commands.
+Having an SSH connection established with your Raspberry Pi, enter the following commands to
+install Node-RED:
+pi@raspberry:~ $ bash <(curl -sL https://raw.githubusercontent.com/nodered/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+The installation should be completed after a couple of minutes.
+Autostart Node-RED on boot
+imp)) To automatically run Node-RED when the Pi boots up, you need to enter the following
+command:
+pi@raspberry:~ $ sudo systemctl enable nodered.service
+Now, restart your Pi so the autostart takes effect:
+pi@raspberry:~ $ sudo reboot
+Testing the Installation
+When your Pi is back on, you can test the installation by entering the IP address of your Pi in a
+web browser followed by the 1880 port number:
+http://YOUR_RPi_IP_ADDRESS:1880
+In my case is:
+http://192.168.1.98:1880
+A page like this loads:
+Node-RED overview
+Let’s take a look at the Node-RED visual interface.
+Main sections
+
+On the left-side, you can see a list with a bunch of blocks. These blocks are called nodes and
+they are separated by their functionality. If you select a node, you can see how it works in
+the info tab.
+In the center, you have the Flow and this is where you place the nodes.
+Creating a simple flow
+Let’s test a simple example of a flow. ||Start by dragging an Inject node to your flow. Then, also
+drag a Debug node.||
+Connect your nodes together. You can drag them to confirm that they are connected.
+Now, let’s edit the inject node. Double-click the node. In the figure below you can see different
+settings you can change.
+Select string and type Hello!.
+Practical of Architecting Of IoT
+
+To save your application, you need to click the deploy button on the top right corner.
+Your application is saved.
+Testing the flow
+Let’s test our simple flow. Open the debug window and click the Inject node to trigger the
+“Hello!” string.
+
